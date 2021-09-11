@@ -1,0 +1,47 @@
+:root {
+    --primary-color : #a88bff;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+
+body {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    color : var(--primary-color);
+}
+
+#billAmount, #cashGiven {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    border-color: var(--primary-color);
+}
+
+#btnCheck {
+    width: 80px;
+    height: 40px;
+    background-color: #5479df;
+    border-radius: 10px;
+    color: white;
+    font-size: large;
+    border-style: none;
+}
+
+th,td{
+    border: 2px solid var(--primary-color);
+    padding: 10px 30px 10px 5px;
+}
+
+table {
+    border: 3px solid var(--primary-color);
+    width: auto;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
