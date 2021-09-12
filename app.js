@@ -10,6 +10,14 @@ var five = document.querySelector("#five");
 var one = document.querySelector("#one");
 
 var returnCash;
+twoThousand.innerText = "--";
+fiveHundred.innerText = "--";
+oneHundred.innerText = "--";
+twenty.innerText = "--";
+ten.innerText = "--";
+five.innerText = "--";
+one.innerText = "--";
+
 
 function ClickEventHandler(){
     returnCash = cashGiven.value - billAmount.value;
