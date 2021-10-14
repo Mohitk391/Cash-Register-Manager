@@ -14,11 +14,13 @@
     <h1>Cash Regsiter Manager</h1>
     <p>Enter the bill amount and cash given by the customer and know the minimum number of notes to return.</p>
     <strong>Bill Amount:</strong><br><br>  
-    <input id ="billAmount" type="text"><br><br>
+    <input id ="billAmount" type="number" min = "1"><br><br>
     <strong>Cash Given:</strong><br><br>
-    <input id ="cashGiven" type="text"><br><br>
-    <button id="btnCheck">Check</button><br>
+    <input id ="cashGiven" type="number" min = "1"><br><br>
+    <button id="btnCheck">Check</button> 
+    <button onClick="window.location.reload();">New Bill</button><br><br>
     <h2>Return Change</h2>
+    <div id="equalAmount"></div>
     <table>
         <tr>
             <th>No. of Notes</th>
