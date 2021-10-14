@@ -10,6 +10,17 @@ var five = document.querySelector("#five");
 var one = document.querySelector("#one");
 var equalAmount = document.querySelector("#equalAmount");
 
+billAmount.onkeydown = function(e) {
+    if(!((e.keyCode > 96 && e.keyCode < 106) || (e.keyCode > 48 && e.keyCode < 58)  || e.keyCode == 8 || e.keyCode == 9)) {
+        return false;
+    }
+}
+
+cashGiven.onkeydown = function(e) {
+    if(!((e.keyCode > 96 && e.keyCode < 106) || (e.keyCode > 48 && e.keyCode < 58)  || e.keyCode == 8 || e.keyCode == 9)) {
+        return false;
+    }
+}
 
 var returnCash;
 twoThousand.innerText = "--";
