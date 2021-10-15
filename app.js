@@ -8,7 +8,7 @@ var twenty = document.querySelector("#twenty");
 var ten = document.querySelector("#ten");
 var five = document.querySelector("#five");
 var one = document.querySelector("#one");
-var equalAmount = document.querySelector("#equalAmount");
+var output = document.querySelector("#output");
 
 billAmount.onkeydown = function(e) {
     if(!((e.keyCode > 96 && e.keyCode < 106) || (e.keyCode > 48 && e.keyCode < 58)  || e.keyCode == 8 || e.keyCode == 9)) {
@@ -33,61 +33,74 @@ one.innerText = "--";
 
 
 function ClickEventHandler(){
-    document.querySelectorAll("input").forEach((element) => { element.disabled = true; });
-    returnCash = cashGiven.value - billAmount.value;
-    if(returnCash < 0){
-        equalAmount.innerHTML = "Cash Given is less than the bill amount.<br> Amount still required: Rs. <b>" +  Math.abs(returnCash) + "</b>.";
+    if(billAmount.value === ""){
+        output.innerText = "Please enter every field";
+        output.style.color ="red";
+        billAmount.focus();
     }
-    else if(returnCash === 0) {
-        equalAmount.innerText = "No change is required to be given. Customer has given required amount of money.";
+    else if(cashGiven.value === ""){
+        output.innerText = "Please enter every field";
+        output.style.color ="red";
+        cashGiven.focus();
     }
     else{
-        equalAmount.innerHTML = "";
-        var flag= true;
-        
-        while(flag){
-            if(returnCash===0){
-                flag=false;
-                break;
-            }
-            else {
-                if(returnCash >= 2000){
-                    twoThousand.innerText = Math.floor(returnCash / 2000) ;
-                    returnCash = returnCash % 2000 ;
-                    continue;
+        output.style.color = "black";
+        document.querySelectorAll("input").forEach((element) => { element.disabled = true; });
+        returnCash = cashGiven.value - billAmount.value;
+        if(returnCash < 0){
+            output.innerHTML = "Cash Given is less than the bill amount.<br> Amount still required: Rs. <b>" +  Math.abs(returnCash) + "</b>.";
+        }
+        else if(returnCash === 0) {
+            output.innerText = "No change is required to be given. Customer has given required amount of money.";
+        }
+        else{
+            output.innerHTML = "";
+            var flag= true;
+            
+            while(flag){
+                if(returnCash===0){
+                    flag=false;
+                    break;
                 }
-                else if(returnCash >= 500) {
-                    fiveHundred.innerText = Math.floor(returnCash / 500);
-                    returnCash = returnCash % 500;
-                    continue;
-                }
-                else if(returnCash >= 100) {
-                    oneHundred.innerText = Math.floor(returnCash / 100);
-                    returnCash = returnCash % 100;
-                    continue;
-                }
-                else if(returnCash >= 20) {
-                    twenty.innerText = Math.floor(returnCash / 20);
-                    returnCash = returnCash % 20;
-                    continue;
-                }
-                else if(returnCash >= 10) {
-                    ten.innerText = Math.floor(returnCash / 10);
-                    returnCash = returnCash % 10;
-                    continue;
-                }
-                else if(returnCash >= 5) {
-                    five.innerText = Math.floor(returnCash / 5);
-                    returnCash = returnCash % 5;
-                    continue;
-                }
-                else if(returnCash >= 1) {
-                    one.innerText = Math.floor(returnCash / 1);
-                    returnCash = returnCash % 1;
+                else {
+                    if(returnCash >= 2000){
+                        twoThousand.innerText = Math.floor(returnCash / 2000) ;
+                        returnCash = returnCash % 2000 ;
+                        continue;
+                    }
+                    else if(returnCash >= 500) {
+                        fiveHundred.innerText = Math.floor(returnCash / 500);
+                        returnCash = returnCash % 500;
+                        continue;
+                    }
+                    else if(returnCash >= 100) {
+                        oneHundred.innerText = Math.floor(returnCash / 100);
+                        returnCash = returnCash % 100;
+                        continue;
+                    }
+                    else if(returnCash >= 20) {
+                        twenty.innerText = Math.floor(returnCash / 20);
+                        returnCash = returnCash % 20;
+                        continue;
+                    }
+                    else if(returnCash >= 10) {
+                        ten.innerText = Math.floor(returnCash / 10);
+                        returnCash = returnCash % 10;
+                        continue;
+                    }
+                    else if(returnCash >= 5) {
+                        five.innerText = Math.floor(returnCash / 5);
+                        returnCash = returnCash % 5;
+                        continue;
+                    }
+                    else if(returnCash >= 1) {
+                        one.innerText = Math.floor(returnCash / 1);
+                        returnCash = returnCash % 1;
+                    }
                 }
             }
         }
-    }
+    } 
 }
 
 
