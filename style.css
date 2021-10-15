@@ -15,7 +15,7 @@ h1 {
     color : var(--primary-color);
 }
 
-#billAmount, #cashGiven {
+input {
     width: 250px;
     height: 30px;
     border-radius: 5px;
