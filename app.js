@@ -10,15 +10,32 @@ var five = document.querySelector("#five");
 var one = document.querySelector("#one");
 var output = document.querySelector("#output");
 
-billAmount.onkeydown = function(e) {
-    if(!((e.keyCode > 96 && e.keyCode < 106) || (e.keyCode > 48 && e.keyCode < 58)  || e.keyCode == 8 || e.keyCode == 9)) {
-        return false;
+cashGiven.disabled = true;
+
+billAmount.onkeydown = (e) => {
+   if(billAmount.value===""){
+        if(!((e.keyCode > 96 && e.keyCode < 106) || (e.keyCode > 48 && e.keyCode < 58)  || e.keyCode == 8 || e.keyCode == 9)) {
+            return false;
+        }
     }
+    else {
+        if(!((e.keyCode > 95 && e.keyCode < 106) || (e.keyCode > 47 && e.keyCode < 58)  || e.keyCode == 8 || e.keyCode == 9)) {
+            return false;
+        }
+    }
+    cashGiven.disabled=false;
 }
 
-cashGiven.onkeydown = function(e) {
-    if(!((e.keyCode > 96 && e.keyCode < 106) || (e.keyCode > 48 && e.keyCode < 58)  || e.keyCode == 8 || e.keyCode == 9)) {
-        return false;
+cashGiven.onkeydown = (e) => {
+   if(cashGiven.value===""){
+        if(!((e.keyCode > 96 && e.keyCode < 106) || (e.keyCode > 48 && e.keyCode < 58)  || e.keyCode == 8 || e.keyCode == 9)) {
+            return false;
+        }
+    }
+    else {
+        if(!((e.keyCode > 95 && e.keyCode < 106) || (e.keyCode > 47 && e.keyCode < 58)  || e.keyCode == 8 || e.keyCode == 9)) {
+            return false;
+        }
     }
 }
 
